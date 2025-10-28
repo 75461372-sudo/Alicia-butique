@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Boutique | Moda y Estilo</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 🌸 Colores base */
+    :root {
+      --fondo: #fff6fa;
+      --principal: #e91e63;
+      --secundario: #9c27b0;
+      --texto: #2d2d2d;
+      --gris: #777;
+      --blanco: #ffffff;
+      --degradado: linear-gradient(135deg, #e91e63, #9c27b0);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      scroll-behavior: smooth;
+    }
+
+    /* 🔹 NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--blanco);
+      padding: 18px 36px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      animation: fadeDown 1s ease;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--principal);
+      letter-spacing: 1px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gris);
+      margin-left: 24px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--principal);
+    }
+
+    /* 💎 HERO */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      margin-bottom: 15px;
+      animation: slideUp 1.2s ease;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      line-height: 1.6;
+      color: #f8f8f8;
+      animation: slideUp 1.6s ease;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 26px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 10px;
+      transition: 0.3s ease;
+    }
+
+    .btn.primary {
+      background: var(--degradado);
+      color: white;
+    }
+
+    .btn.secondary {
+      border: 2px solid white;
+      color: white;
+      background: transparent;
+    }
+
+    .btn.return {
+      background: #fff;
+      color: var(--principal);
+      border: 2px solid var(--principal);
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    /* 💄 Secciones */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--principal);
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 1rem;
+      color: var(--gris);
+      line-height: 1.7;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+    }
+
+    /* 👗 Productos destacados */
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .producto {
+      background: var(--blanco);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .producto img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .producto h3 {
+      color: var(--secundario);
+      margin: 15px 0 5px 0;
+      font-size: 1.2rem;
+    }
+
+    .producto p {
+      color: var(--gris);
+      margin-bottom: 16px;
+    }
+
+    .producto:hover {
+      transform: translateY(-8px);
+    }
+
+    /* 🌸 Footer */
+    footer {
+      background: var(--degradado);
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 8px 0;
+    }
+
+    /* ✨ Animaciones */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {font-size: 2.4rem;}
+      .nav-links a {margin-left: 12px;}
+      section {padding: 60px 15px;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🔹 NAV -->
+  <nav>
+    <div class="brand">Mi Boutique</div>
+    <div class="nav-links">
+      <a href="#sobre">Nosotros</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- 🌟 HERO -->
+  <header class="hero">
+    <h1>Bienvenidos a Mi Boutique</h1>
+    <p>“Cada prenda cuenta una historia... deja que la tuya sea inolvidable.”  
+       Vive la elegancia, el estilo y la autenticidad en cada detalle.</p>
+    <a href="#productos" class="btn primary">Ver Colección</a>
+    <a href="#sobre" class="btn secondary">Conócenos</a>
+    <a href="index.html" class="btn return">⬅ Regresar al Inicio</a>
+  </header>
+
+  <!-- 💬 SECCIÓN NOSOTROS -->
+  <section id="sobre">
+    <h2>Sobre Nosotros</h2>
+    <p>En <strong>Mi Boutique</strong> creemos que la moda es una forma de expresión.  
+       Cada prenda está diseñada con amor, estilo y pasión, pensada para resaltar tu esencia y confianza.  
+       Nuestra misión es ofrecer piezas únicas que te hagan sentir segura, elegante y auténtica.</p>
+  </section>
+
+  <!-- 👗 SECCIÓN PRODUCTOS -->
+  <section id="productos">
+    <h2>Colección Destacada</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="img/imagen04.jpg" alt="Moda elegante" class="banner">
+        <h3>Vestido corto</h3>
+        <p>Sofisticado, moderno y perfecto para ocasiones especiales.</p>
+      </div>
+      <div class="producto">
+          <img src="img/imagen03.jpg" alt="Moda elegante" class="banner"> 
+        <h3>vestido negro</h3>
+        <p>Diseño cómodo y con estilo para tu día a día.</p>
+      </div>
+      <div class="producto">
+         <img src="img/imagen01.jpg" alt="Moda elegante" class="banner">
+         <h3>vestido elegante</h3>
+        <p>Ideal para quienes buscan un look moderno y atrevido.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💌 FOOTER -->
+  <footer id="contacto">
+    <p>© <script>document.write(new Date().getFullYear())</script> Mi Boutique — Todos los derechos reservados.</p>
+    <p>Hecho con 💖 para mujeres únicas y con estilo.</p>
+  </footer>
+
+</body>
+</html>
